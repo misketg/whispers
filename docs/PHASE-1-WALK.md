@@ -1,129 +1,81 @@
 # Phase 1 — Get the Player Walking
 
-This guide walks you through opening the project in Godot and getting a first-person controller working. By the end you'll be walking around a test floor with WASD + mouse look.
+The scene is already built. You just need to install Godot and press play.
 
-**Estimated time:** 1–2 hours if you've never used Godot before.
+**Estimated time:** 10–15 minutes (most of it is the Godot download).
 
 ---
 
 ## Step 1 — Install Godot
 
 1. Go to <https://godotengine.org/download>
-2. Download **Godot Engine 4.x** (Standard, not .NET) for macOS
+2. Download **Godot Engine 4.x** (Standard version, **not .NET**) for macOS
 3. The download is a single app — no installer needed
 4. Move it to your Applications folder
 5. Launch it
 
-You'll see the Project Manager. Close it for now.
+You'll see the Project Manager. Don't create a new project — close it for now.
 
-## Step 2 — Open the Project
+## Step 2 — Open This Project
 
-1. Launch Godot
-2. Click **Import** (or **Import Existing Project**)
-3. Navigate to your `whispers/` folder
-4. Select the `project.godot` file inside it
-5. Click **Import & Edit**
+1. In the Godot Project Manager, click **Import**
+2. Click **Browse** and navigate to your `whispers/` folder
+3. Select the **`project.godot`** file inside it
+4. Click **Import & Edit**
 
-The Godot editor opens with the whispers project. You should see the file structure on the bottom-left (FileSystem panel): `scripts/Player.gd`, `scenes/`, `assets/`, etc.
+The Godot editor opens with the whispers project. You should see `scenes/Main.tscn` in the FileSystem panel (bottom-left).
 
-## Step 3 — Set Up Input Mappings
+## Step 3 — Open the Main Scene
 
-We need to tell Godot which keys trigger which actions. The Player.gd script expects five actions: `move_forward`, `move_back`, `move_left`, `move_right`, `interact`.
+1. In the FileSystem panel, **double-click `scenes/Main.tscn`**
+2. The scene opens in the editor — you'll see the Scene tree (left), the 3D viewport (center), and the Inspector (right)
+3. You should see: a `Main` node containing `Floor`, `Player`, and `DirectionalLight3D`
 
-1. Top menu: **Project → Project Settings**
-2. Click the **Input Map** tab at the top of the window
-3. For each action below:
-   - Type the action name in the "Action" text field
-   - Click **Add**
-   - Click the **+** button that appears next to the action
-   - Choose **Key**, press the key, click **OK**
-4. Add these five:
-   - `move_forward` → **W**
-   - `move_back` → **S**
-   - `move_left` → **A**
-   - `move_right` → **D**
-   - `interact` → **E**
-5. Close the Project Settings window
-
-## Step 4 — Build the Main Scene
-
-We're going to create the scene the player walks around in.
-
-1. In the FileSystem panel (bottom-left), right-click the **`scenes/`** folder
-2. Choose **New Scene**
-3. At the top of the scene panel, click **3D Scene** — this creates a `Node3D` as the root
-4. Double-click the root node and rename it to `Main`
-5. Press **Ctrl+S / Cmd+S** and save as `scenes/Main.tscn`
-
-## Step 5 — Add a Floor
-
-We need something for the player to stand on.
-
-1. Right-click the **Main** node → **Add Child Node**
-2. Search for `StaticBody3D`, double-click it
-3. Rename it to `Floor`
-4. Right-click **Floor** → Add Child Node → `MeshInstance3D`
-5. Select the **MeshInstance3D**. In the Inspector (right panel), find **Mesh** → click `<null>` → choose **New BoxMesh**
-6. Expand the Mesh property, set **Size** to `(40, 1, 40)` — a wide floor
-7. Right-click **Floor** → Add Child Node → `CollisionShape3D`
-8. Select the **CollisionShape3D**. In Inspector, find **Shape** → click `<null>` → choose **New BoxShape3D**
-9. Expand the Shape, set **Size** to `(40, 1, 40)`
-10. Select **Floor** itself. In Inspector, set **Transform → Position → Y** to `-1` (so the top of the floor is at y=0)
-
-The MeshInstance3D is what you *see*. The CollisionShape3D is what the player *stands on*. Both are required.
-
-## Step 6 — Add the Player
-
-1. Right-click **Main** → Add Child Node → `CharacterBody3D`
-2. Rename it to `Player`
-3. From the FileSystem panel, drag **`scripts/Player.gd`** onto the **Player** node — the script attaches
-4. Right-click **Player** → Add Child Node → `Camera3D`
-5. Right-click **Player** → Add Child Node → `CollisionShape3D`
-6. Select the **CollisionShape3D**. Set Shape → **New CapsuleShape3D**
-7. In the capsule shape properties, set **Radius** to `0.4` and **Height** to `1.6`
-8. Select **Camera3D**. Set **Transform → Position** to `(0, 0.6, 0)` — eye height
-9. Select **Player** itself. Set **Transform → Position** to `(0, 1, 0)` — so it stands on the floor
-
-## Step 7 — Add a Light
-
-1. Right-click **Main** → Add Child Node → `DirectionalLight3D`
-2. With it selected, set **Transform → Rotation → X** to `-45` (degrees)
-3. Set **Transform → Rotation → Y** to `30`
-
-This lights the scene like a low sun. Good enough for now — we'll do real horror lighting in Phase 8.
-
-## Step 8 — Press Play
+## Step 4 — Press Play
 
 1. Press **F5** (or click the play button ▶ at the top-right)
-2. Godot asks you to select a main scene — choose **`Main.tscn`**
-3. The game runs. You're standing on a grey floor under a low sun.
+2. Because `project.godot` already declares `scenes/Main.tscn` as the main scene, the game starts immediately
+3. The window opens. You're standing on a grey floor under a low sun.
 
 **Controls:**
 - **WASD** — walk
 - **Mouse** — look around
-- **Escape** — release the mouse (to close the window or click editor)
-- **Click in window** — recapture the mouse
+- **Escape** — release the mouse (click the window again to recapture)
+- **Close the window** to stop the game
+
+## What's Already Set Up
+
+You don't need to do these — they're already in the project:
+
+- ✅ **Input mappings** — `move_forward` (W), `move_back` (S), `move_left` (A), `move_right` (D), `interact` (E). See them in **Project → Project Settings → Input Map**.
+- ✅ **Player script** — first-person controller attached to the Player node
+- ✅ **Player body** — `CharacterBody3D` with capsule collision, `Camera3D` at eye height
+- ✅ **Floor** — 40×40 `StaticBody3D` with box mesh and collision
+- ✅ **Light** — `DirectionalLight3D` tilted at 45° (dim, slightly warm — placeholder until Phase 8)
+- ✅ **Dark background** — clear color is near-black for the eventual atmosphere
 
 ## If Something Doesn't Work
 
-- **Black screen:**
-  - Do you have a `DirectionalLight3D` in the scene?
-  - Is the `Camera3D` a child of `Player` (not the floor)?
-  - Is the camera position Y around 0.6 — not inside the floor?
+- **Black screen on play:**
+  - Check the Scene tree has all four nodes: `Main`, `Floor`, `Player`, `DirectionalLight3D`.
+  - If `Main.tscn` doesn't open, the file may have a syntax issue. Tell me what error Godot shows and I'll fix it.
 
-- **Can't move:**
-  - Check Input Map has all five actions (`move_forward`, `move_back`, `move_left`, `move_right`).
-  - Check the Player node has `scripts/Player.gd` attached (you'll see a scroll icon on it).
+- **Can't move (player just stands there):**
+  - Check the Player node has the script attached — you'll see a scroll icon on it.
+  - Check Input Map: **Project → Project Settings → Input Map**. You should see `move_forward`, `move_back`, `move_left`, `move_right`. If missing, the input section in `project.godot` didn't parse — tell me.
 
-- **Fall through floor:**
-  - The Floor needs a `CollisionShape3D`, not just a `MeshInstance3D`.
-  - The Player needs a `CollisionShape3D` too.
+- **Player falls through floor:**
+  - The Floor needs both `MeshInstance3D` AND `CollisionShape3D` — both are in the scene already. If you see only one, something's wrong with `Main.tscn`.
 
-- **"No valid context" or script errors:**
-  - Make sure you're using Godot 4.x, not 3.x. The script uses Godot 4 syntax.
+- **"Cannot run scene" or "No main scene set":**
+  - Go to **Project → Project Settings → Application → Run → Main Scene** and select `scenes/Main.tscn` manually.
+
+- **Script errors on play:**
+  - Make sure you're on Godot 4.x, not 3.x. The script uses Godot 4 syntax (`@export`, `@onready`, `deg_to_rad`, etc.).
+  - If you see specific errors, copy them and tell me.
 
 ## When It Works
 
-Take a screenshot. You've built a working first-person controller in Godot. This is the foundation everything else builds on.
+You're standing on a grey floor in a dark world under a low sun. WASD moves you, mouse looks around, the world is silent. That's the foundation.
 
-Then commit and move on to Phase 2 (Forest Shell).
+Next step: commit `Main.tscn` (no changes needed, but Godot may rewrite it on first open — that's fine) and start Phase 2 (Forest Shell).

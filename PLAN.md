@@ -96,7 +96,7 @@ If you find yourself adding any "out" item, stop and write it in a `BACKLOG.md` 
 Each phase ends with something playable. Don't skip ahead — motivation comes from seeing your own progress.
 
 - [x] **Phase 0 — Project Setup.** Godot installed, project structure, `.gitignore`, Player.gd script written. (1 day)
-- [ ] **Phase 1 — Walk.** Player capsule + camera, WASD + mouse look, walking on a floor. See [`docs/PHASE-1-WALK.md`](./docs/PHASE-1-WALK.md). (3–5 days)
+- [~] **Phase 1 — Walk.** Main scene built, Input Map preset, Player script attached. **Awaiting user verification in Godot.** See [`docs/PHASE-1-WALK.md`](./docs/PHASE-1-WALK.md).
 - [ ] **Phase 2 — Forest Shell.** Terrain (or plane with fog), 10–20 trees, skybox, ambient sound. Player can walk around. (3–5 days)
 - [ ] **Phase 3 — Interaction.** Raycast, hover prompt, first interactable object. (3–5 days)
 - [ ] **Phase 4 — Whisper Cutscene System.** Reusable forced-cinematic template. Audio + subtitle + dim/freeze. The hard part. (5–7 days)
