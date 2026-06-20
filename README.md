@@ -17,5 +17,6 @@ Vertical slice in development. Target playtime: 20–30 minutes.
 
 ## Docs
 
-- [PLAN.md](./PLAN.md) — concept, story beats, scope, milestones, learning path
+- [PLAN.md](./PLAN.md) — concept, story beats, scope, phases, learning path
 - [STORY.md](./STORY.md) — story bible: Entity, whispers, the ending twist
+- [docs/PHASE-1-WALK.md](./docs/PHASE-1-WALK.md) — step-by-step guide to get the player walking in Godot

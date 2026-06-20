@@ -91,21 +91,21 @@ If you find yourself adding any "out" item, stop and write it in a `BACKLOG.md` 
   ```
 - **Version control:** you already have a git repo. Add a `.gitignore` for Godot: Godot keeps a `.godot/` cache folder you do NOT commit.
 
-## 6. Milestones
+## 6. Phases
 
-Each milestone ends with something playable. Don't skip ahead — motivation comes from seeing your own progress.
+Each phase ends with something playable. Don't skip ahead — motivation comes from seeing your own progress.
 
-- [ ] **M0 — Setup.** Godot installed, project opens, `.gitignore` correct, first commit runs.
-- [ ] **M1 — Walk.** Player capsule + camera, WASD + mouse look, walking on a flat plane. (1–3 days)
-- [ ] **M2 — The forest shell.** Terrain (or just a plane with fog), 5–10 tree instances, skybox, ambient sound. Player can walk around. (3–5 days)
-- [ ] **M3 — Interaction.** One object (a shoe). Raycast, "Press E" prompt, debug print. (1–2 days)
-- [ ] **M4 — First whisper.** Interacting plays an audio clip + shows subtitle. (1 day)
-- [ ] **M5 — First shift.** Trigger → fade → load hospital scene → 5 sec later → fade back. This is the hardest milestone. (3–5 days)
-- [ ] **M6 — Story content.** All whisper lines written, all objects placed, shifts wired up. (1 week)
-- [ ] **M7 — Atmosphere pass.** Lighting, fog density, post-processing (vignette, grain), audio mixing. (3–5 days)
-- [ ] **M8 — Polish + ship.** Title screen, end screen, pause menu, export build, have someone else play it. (1 week)
+- [x] **Phase 0 — Project Setup.** Godot installed, project structure, `.gitignore`, Player.gd script written. (1 day)
+- [ ] **Phase 1 — Walk.** Player capsule + camera, WASD + mouse look, walking on a floor. See [`docs/PHASE-1-WALK.md`](./docs/PHASE-1-WALK.md). (3–5 days)
+- [ ] **Phase 2 — Forest Shell.** Terrain (or plane with fog), 10–20 trees, skybox, ambient sound. Player can walk around. (3–5 days)
+- [ ] **Phase 3 — Interaction.** Raycast, hover prompt, first interactable object. (3–5 days)
+- [ ] **Phase 4 — Whisper Cutscene System.** Reusable forced-cinematic template. Audio + subtitle + dim/freeze. The hard part. (5–7 days)
+- [ ] **Phase 5 — Reality Shifts.** Fade → load alternate scene → return. Two shifts (hospital hallway, childhood bedroom). (5–7 days)
+- [ ] **Phase 6 — The Entity.** Character model, mask system, dialogue, follows player, choice UI. (7–10 days)
+- [ ] **Phase 7 — Story Content.** All whisper fragments written + recorded, all objects placed, shifts wired, Entity dialogue written + recorded. (1–2 weeks)
+- [ ] **Phase 8 — Polish & Ship.** Lighting pass, post-processing, audio mix, title/end/pause screens, export, external playtest. (1–2 weeks)
 
-**Realistic timeline for a beginner, part-time:** 8–12 weeks. That's faster than it sounds once M1 clears.
+**Realistic timeline for a beginner, part-time:** 8–12 weeks. That's faster than it sounds once Phase 1 clears.
 
 ## 7. Asset Sources (all free, all CC0 or licensed for commercial use)
 
@@ -125,18 +125,17 @@ As a beginner, spend the first week on these before touching the actual game:
 3. **First-person controller.** Follow a 2024-era Godot 4 FPS tutorial on YouTube (GDQuest or StayAtHomeDev). Type it yourself — do not copy-paste.
 4. **Signals.** Godot's event system. You'll need this for interaction triggers.
 
-Stop learning when you can answer this: *"Could I make a cube move with WASD and print 'hello' when I look at it?"* If yes, you're ready for M2.
+Stop learning when you can answer this: *"Could I make a cube move with WASD and print 'hello' when I look at it?"* If yes, you're ready for Phase 2.
 
 ## 9. First Steps (this week)
 
-1. Download Godot 4.3 from godotengine.org
-2. Open the project, save the empty scene as `scenes/main.tscn`
-3. Add `.gitignore` for Godot
-4. Commit
-5. Follow the GDScript "Step by step" tutorial
-6. Ping me when you're stuck or when M1 is done
+1. Download Godot 4.x from godotengine.org
+2. Open the existing `whispers/` folder via **Import → select `project.godot`**
+3. Follow [`docs/PHASE-1-WALK.md`](./docs/PHASE-1-WALK.md) — get the player walking
+4. Commit your `Main.tscn` once it works
+5. Ping me when you're stuck or when Phase 1 is done
 
-## 10. Open Questions (decide before M6)
+## 10. Open Questions (decide before Phase 7)
 
 **Answered:**
 - ~~Player identity~~ → Blank / anonymous amnesiac.
@@ -154,7 +153,7 @@ Stop learning when you can answer this: *"Could I make a cube move with WASD and
 - ~~The twist~~ → The memories are all of the player's own sacrificed child. Player is the loop, not the start.
 
 **Still open:**
-- **The Entity's true face design.** Needs 3 sketch concepts before M5. Suggested: asymmetrical, too many teeth, eyes that don't track.
+- **The Entity's true face design.** Needs 3 sketch concepts before Phase 6. Suggested: asymmetrical, too many teeth, eyes that don't track.
 - **Specific whisper lines.** 12–15 fragments need to be written. Memory-texture, not warning-texture.
 - **The Entity's dialogue.** 8–10 lines, mostly cold mode, one mocking, one rage flash.
 - **Language.** English or Turkish? Pick one for the slice.

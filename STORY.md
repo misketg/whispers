@@ -171,7 +171,7 @@ The Entity knew. The Entity has been waiting for them to remember just enough to
 
 ## Open Creative Questions
 
-- **The Entity's true face design.** Needs 3 sketch concepts before milestone M5. Suggested direction: asymmetrical, too many teeth, eyes that don't track the player.
+- **The Entity's true face design.** Needs 3 sketch concepts before Phase 6. Suggested direction: asymmetrical, too many teeth, eyes that don't track the player.
 - **Specific whisper lines.** 12–15 fragments need to be written. Each should feel like a memory, not a warning.
 - **The Entity's dialogue.** 8–10 lines across the game. Cold mode mostly, one or two mocking, one rage flash.
 - **Language.** English or Turkish? — pick one for the slice.
