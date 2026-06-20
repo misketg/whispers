@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwhispersphase1setup"]
+[gd_scene load_steps=14 format=3 uid="uid://bwhispersphase1setup"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_player"]
 
@@ -12,6 +12,30 @@ size = Vector3(40, 1, 40)
 [sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
 size = Vector3(40, 1, 40)
 
+[sub_resource type="StandardMaterial3D" id="Mat_floor"]
+albedo_color = Color(0.32, 0.3, 0.28, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_landmark"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_red"]
+albedo_color = Color(0.95, 0.18, 0.18, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_green"]
+albedo_color = Color(0.2, 0.95, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_blue"]
+albedo_color = Color(0.2, 0.45, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_yellow"]
+albedo_color = Color(1, 0.92, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_purple"]
+albedo_color = Color(0.78, 0.25, 0.95, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_cyan"]
+albedo_color = Color(0.2, 0.92, 0.95, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -19,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="FloorMesh" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_floor")
+material_override = SubResource("Mat_floor")
 
 [node name="FloorCollision" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_floor")
@@ -35,5 +60,58 @@ shape = SubResource("CapsuleShape3D_player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
-light_energy = 0.6
-light_color = Color(0.85, 0.83, 0.78, 1)
+light_energy = 0.7
+light_color = Color(0.9, 0.86, 0.78, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DebugLabel" type="Label" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 600.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+text = "debug"
+
+[node name="Landmarks" type="Node3D" parent="."]
+
+[node name="LM_Red" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -5)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_red")
+
+[node name="LM_Green" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -5)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_green")
+
+[node name="LM_Blue" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 5)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_blue")
+
+[node name="LM_Yellow" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 5)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_yellow")
+
+[node name="LM_Purple" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, -10)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_purple")
+
+[node name="LM_Cyan" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10, 0.75, 0)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_cyan")
+
+[node name="LM_Red2" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10, 0.75, 0)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_red")
+
+[node name="LM_Green2" type="MeshInstance3D" parent="Landmarks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, 10)
+mesh = SubResource("BoxMesh_landmark")
+material_override = SubResource("Mat_green")

@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var gravity: float = 9.8
 
 @onready var camera: Camera3D = $Camera3D
+@onready var debug_label: Label = get_node_or_null("/root/Main/UI/DebugLabel")
 
 
 func _ready() -> void:
@@ -42,3 +43,11 @@ func _physics_process(delta: float) -> void:
 
 	velocity.y -= gravity * delta
 	move_and_slide()
+
+	if debug_label:
+		var h_speed: float = Vector2(velocity.x, velocity.z).length()
+		debug_label.text = "pos: (%.2f, %.2f, %.2f)  speed: %.2f m/s  input: (%.2f, %.2f)" % [
+			global_position.x, global_position.y, global_position.z,
+			h_speed,
+			input_dir.x, input_dir.y
+		]
