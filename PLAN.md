@@ -2,13 +2,17 @@
 
 ## 1. Concept
 
-A first-person 3D psychological horror adventure. An amnesiac wakes in a forest that shouldn't exist. The forest periodically shifts into dreamlike other places. A charismatic, wrong-faced entity offers to help them escape. The dead whisper warnings in forced cinematic cutscenes — but their warnings are unreliable, because **they don't know they're dead**. They think they escaped. They are warning the player based on incomplete memories of their own failure.
+A first-person 3D psychological horror adventure. An amnesiac wakes in a forest that shouldn't exist. A nameless shapeshifting Entity — wearing the faces of the dead — offers to help them escape. The whispers of previous victims surface as fragments of memory: a lullaby, a face, a name, the weight of a sleeping child. They seem unrelated. They are not.
 
 **Central question:** *What IS this place?*
 
-**Answer:** It was built by the entity — a creature with a face, intelligent and cruel — to collect voices. It lets victims try to escape, because the trying is what feeds it. The only "escape" it offers is a lie: sacrifice someone else, bring them in, and you can go. But no one leaves. The moment a victim accepts the deal, they become the next whisper — without realizing it. They think they walked free. They are still here, whispering to the next one.
+**Answer:** The place was built by the Entity to collect voices. It lets victims try to escape, because the trying is what feeds it. The whispers are previous victims who accepted the Entity's deal — they sacrificed someone to "escape" and became whispers without realizing it. They think they walked free. They are still here, warning the next victim based on memories they don't understand.
 
-**Core emotional arc:** disorientation → curiosity → distrust → realization → dread. Not jump-scare horror — slow-burn, tragic, psychological.
+**Deeper twist (revealed at the ending):** The memory fragments all describe the same person — a child. The child the player once had. The child the player brought here long ago in exchange for their own escape. The player forgot. The amnesia is the place's work. The player is not a new victim — they are the latest loop of the same one. The "waking in the forest" is not the start of their story; it is the loop restarting.
+
+**Core emotional arc:** disorientation → curiosity → distrust → dread → realization (too late). Not jump-scare horror — slow-burn, tragic, psychological.
+
+**Full story detail:** [STORY.md](./STORY.md) — Entity design, whisper aesthetic, object list, ending cinematic.
 
 ## 2. The Slice (20–30 min)
 
@@ -135,14 +139,25 @@ Stop learning when you can answer this: *"Could I make a cube move with WASD and
 ## 10. Open Questions (decide before M6)
 
 **Answered:**
-- ~~Player identity~~ → Blank / anonymous amnesiac, no defined past.
+- ~~Player identity~~ → Blank / anonymous amnesiac.
 - ~~Whisper source~~ → Previous victims who think they escaped. Don't know they're dead.
-- ~~Central mystery~~ → What IS this place? Answer: built by the Entity to collect voices.
+- ~~Central mystery~~ → What IS this place? Built by the Entity to collect voices.
 - ~~Ending~~ → Sacrifice is a lie. Player becomes a whisper without realizing.
+- ~~Entity face~~ → True face (creepy, rarely shown) + wears masks of dead victims + player's own face at climax.
+- ~~Entity manner~~ → Cycling cold / mocking / rage. Never warm.
+- ~~Entity name~~ → None. Refuses to give one.
+- ~~Trust paranoia~~ → Entity claims to be a victim + forest has figures that may be it in disguise or may be real survivors.
+- ~~Whisper cast~~ → Many voices, no individual identities. A chorus.
+- ~~Whisper origins~~ → All sacrificed someone. Won't/can't say so.
+- ~~Child's shoe~~ → Never explained. Just there.
+- ~~Whisper aesthetic~~ → Unrelated memory fragments that resolve into a pattern at the ending.
+- ~~The twist~~ → The memories are all of the player's own sacrificed child. Player is the loop, not the start.
 
 **Still open:**
-- **The Entity's design.** What does its "wrong" face look like? (Mask? Sculpted? A real face stretched wrong?) — Sketch 3 concepts before M5.
-- **Whisper voice acting.** AI-generated (ElevenLabs free tier) or your own voice pitched/filtered? Each whisperer needs a distinct timbre.
-- **The Entity's voice.** Warm and reasonable (more unsettling) or flat and off (more uncanny)?
-- **Language.** English? Turkish? Both? — Pick one for the slice; localize later.
-- **The final choice framing.** Does the player know their choice doesn't matter, or is the trap hidden until the credits? (Recommendation: hide it. The realization IS the ending.)
+- **The Entity's true face design.** Needs 3 sketch concepts before M5. Suggested: asymmetrical, too many teeth, eyes that don't track.
+- **Specific whisper lines.** 12–15 fragments need to be written. Memory-texture, not warning-texture.
+- **The Entity's dialogue.** 8–10 lines, mostly cold mode, one mocking, one rage flash.
+- **Language.** English or Turkish? Pick one for the slice.
+- **Whisper voice performance.** AI-generated (ElevenLabs) vs. own voice pitched/filtered.
+- **The Entity's voice performance.** Flat/polite (recommended), whispered, or distorted?
+- **Does the player realize before the credits?** Recommendation: no — the realization happens TO them in the final cinematic.

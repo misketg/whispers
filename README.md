@@ -18,3 +18,4 @@ Vertical slice in development. Target playtime: 20–30 minutes.
 ## Docs
 
 - [PLAN.md](./PLAN.md) — concept, story beats, scope, milestones, learning path
+- [STORY.md](./STORY.md) — story bible: Entity, whispers, the ending twist
